@@ -11,23 +11,29 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hallo! Mit wem soll ich dich verbinden?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Tschüss! Bis zum nächsten Mal"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Ich bin ein Rasa Chatbot"
+
+  utter_ask_device_form_device_type:
+  - text: "Mit welcher Art von Gerät soll ich dich verbinden?"
+
+  utter_ask_device_form_device_id:
+  - text: "Wie ist die ID des Gerätes, mit dem ich dich verbinden soll?"
+
+forms:
+  device_form:
+    required_slots:
+      device_type:
+        - type: from_entity
+          entity: device_type
+      device_id:
+        - type: from_entity
+          entity: number
 
 session_config:
   session_expiration_time: 60
