@@ -1,40 +1,52 @@
-version: "2.0"
+version: '2.0'
+
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+
+entities: []
+slots: {}
 
 responses:
   utter_greet:
-  - text: "Hallo! Mit wem soll ich dich verbinden?"
-
+  - text: Hallo! Mit wem soll ich dich verbinden?
   utter_goodbye:
-  - text: "Tschüss! Bis zum nächsten Mal"
-
+  - text: Tschüss! Bis zum nächsten Mal
   utter_iamabot:
-  - text: "Ich bin ein Rasa Chatbot"
-
+  - text: Ich bin ein Rasa Chatbot
   utter_ask_device_form_device_type:
-  - text: "Mit welcher Art von Gerät soll ich dich verbinden?"
-
+  - text: Mit welcher Art von Gerät soll ich dich verbinden?
   utter_ask_device_form_device_id:
-  - text: "Wie ist die ID des Gerätes, mit dem ich dich verbinden soll?"
+  - text: Wie ist die ID des Gerätes, mit dem ich dich verbinden soll?
+
+actions: []
 
 forms:
   device_form:
     required_slots:
-      device_type:
-        - type: from_entity
-          entity: device_type
       device_id:
-        - type: from_entity
-          entity: number
+      - entity: number
+        type: from_entity
+      device_type:
+      - entity: device_type
+        type: from_entity
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+e2e_actions: []
