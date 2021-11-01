@@ -48,3 +48,9 @@ nlu:
     - Bist du ein Mensch?
     - Spreche ich mit einem Computer?
     - Spreche ich mit einem Menschen?
+
+- intent: stop
+  examples: |
+    - Stop
+    - Hör auf
+    - Abbrechen

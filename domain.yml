@@ -36,6 +36,10 @@ responses:
   - text: Mit welcher Art von Gerät soll ich dich verbinden?
   utter_ask_device_form_device_id:
   - text: Wie ist die ID des Gerätes, mit dem ich dich verbinden soll?
+  utter_submit_device:
+  - text: Vielen Dank!
+  utter_submit_abort:
+  - text: Okay! Wurde abgebrochen
 
 actions: []
 
