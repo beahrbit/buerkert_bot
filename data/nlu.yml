@@ -54,3 +54,17 @@ nlu:
     - Stop
     - Hör auf
     - Abbrechen
+
+- intent: give_device_info
+  examples: |
+    - Verbinde mich mit einem [Sensor](device_type)
+    - Ich möchte mit einem [Aktor](device_type) sprechen
+    - Ich möchte mit dem [Sonsor](device_type) mit der ID [2001](device_id) verbunden werden
+
+- intent: device_inform
+  examples: |
+    - Die ID ist [1001](device_id)
+    - Ein [Aktor](device_type) mit der ID [2002](device_id)
+    - [Aktor](device_type)
+    - [Sensor](device_type)
+    - [Sensor](device_type) [1001](device_id)

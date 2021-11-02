@@ -11,3 +11,4 @@ Notizen:
 ToDo:
 - Rasa X einbinden
 - Policies verstehen (z.B. UnexpecTED)
+- Rasa Forms: https://www.youtube.com/watch?v=pzvBJtwCW4I 

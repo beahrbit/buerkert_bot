@@ -21,9 +21,17 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
+- stop
+- give_device_info
+- device_inform
 
 entities: []
-slots: {}
+slots:
+  device_id:
+    type: text
+  device_type:
+    type: text
+
 
 responses:
   utter_greet:
@@ -40,17 +48,19 @@ responses:
   - text: Vielen Dank!
   utter_submit_abort:
   - text: Okay! Wurde abgebrochen
+  utter_slots_values_device:
+  - text: Gerättyp ist {device_type} und die ID {device_id}
 
 actions: []
 
 forms:
   device_form:
     required_slots:
-      device_id:
-      - entity: number
-        type: from_entity
       device_type:
       - entity: device_type
+        type: from_entity
+      device_id:
+      - entity: device_id
         type: from_entity
 
 e2e_actions: []
