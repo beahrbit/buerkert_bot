@@ -1,11 +1,9 @@
 version: '2.0'
-
 config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
 - greet:
     use_entities: true
@@ -21,35 +19,56 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- stop
-- give_device_info
-- device_inform
-- help
-- set_totalizer
-- set_valve
-- get_totalizer
-- get_deviceInfo
-- get_densityFactor
-- get_temperature
-- get_flowrate
-- get_status
-- get_valve
-- deny
-- another_device
-
-
-entities: []
+- stop:
+    use_entities: true
+- give_device_info:
+    use_entities: true
+- device_inform:
+    use_entities: true
+- help:
+    use_entities: true
+- set_totalizer:
+    use_entities: true
+- set_valve:
+    use_entities: true
+- get_totalizer:
+    use_entities: true
+- get_deviceInfo:
+    use_entities: true
+- get_densityFactor:
+    use_entities: true
+- get_temperature:
+    use_entities: true
+- get_flowrate:
+    use_entities: true
+- get_status:
+    use_entities: true
+- get_valve:
+    use_entities: true
+- another_device:
+    use_entities: true
+entities:
+- device_type
+- device_id
 slots:
   device_id:
-    type: text
-  device_type:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
-    type: categorical
+  device_type:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
     values:
-    - Aktor
-    - Sensor
-
-
+    - aktor
+    - sensor
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hallo! Mit wem soll ich dich verbinden?
@@ -67,28 +86,24 @@ responses:
   - text: Okay! Wurde abgebrochen
   utter_slots_values_device:
   - text: Gerättyp ist {device_type} und die ID {device_id}
-# Temporäre Test-Responses:
   utter_actuator_help:
-  - text: "Du kannst den Aktor diese Dinge fragen: bla bla"
+  - text: 'Du kannst den Aktor diese Dinge fragen: bla bla'
   utter_sensor_help:
-  - text: "Du kannst den Sensor diese Dinge fragen: bla bla"
+  - text: 'Du kannst den Sensor diese Dinge fragen: bla bla'
   utter_actuator_status:
   - text: Mir geht es hervorragend! (Aktor)
   utter_sensor_status:
-  - text: "Mir gehts nicht so gut :C (Sensor)"
+  - text: Mir gehts nicht so gut :C (Sensor)
   utter_actuator_getValve:
   - text: Die Ventilposition sitzt bei 50%
-
 actions: []
-
 forms:
   device_form:
     required_slots:
-      device_type:
-      - entity: device_type
-        type: from_entity
       device_id:
       - entity: device_id
         type: from_entity
-
+      device_type:
+      - entity: device_type
+        type: from_entity
 e2e_actions: []
