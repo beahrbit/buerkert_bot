@@ -12,11 +12,11 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule:
-  steps:
-  - intent: give_device_info
-  - action: device_form
-  - active_loop: device_form
+# - rule: Start device_form
+#    steps:
+#   - intent: give_device_info
+#   - action: device_form
+#   - active_loop: device_form
 
 - rule: Submit device_form
 # Condition that form is active.

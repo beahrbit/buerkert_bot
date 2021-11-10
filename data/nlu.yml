@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -13,7 +12,7 @@ nlu:
     - Na du
     - Los geht's
     - Hey du
-
+    - Hallo
 - intent: goodbye
   examples: |
     - Tschüss
@@ -23,7 +22,6 @@ nlu:
     - Schönen Tag noch
     - Bis zum nächsten mal
     - Ciao
-
 - intent: affirm
   examples: |
     - Ja
@@ -31,7 +29,6 @@ nlu:
     - auf jeden Fall
     - hört sich gut an
     - Korrekt
-
 - intent: deny
   examples: |
     - Nein
@@ -41,26 +38,25 @@ nlu:
     - Mag ich nicht
     - Auf keinen Fall
     - nicht wirklich
-
 - intent: bot_challenge
   examples: |
     - Bist du ein Bot?
     - Bist du ein Mensch?
     - Spreche ich mit einem Computer?
     - Spreche ich mit einem Menschen?
-
 - intent: stop
   examples: |
     - Stop
     - Hör auf
     - Abbrechen
-
 - intent: give_device_info
   examples: |
     - Verbinde mich mit einem [Sensor](device_type)
     - Ich möchte mit einem [Aktor](device_type) sprechen
     - Ich möchte mit dem [Sonsor](device_type) mit der ID [2001](device_id) verbunden werden
-
+    - Verbinde mich mit dem [Sensor](device_type) [123456](device_id)
+    - Ich möchte mit einem Messgerät verbunden werden
+    - Verbinde mich mit [Sensor](device_type) [2084432](device_id)
 - intent: device_inform
   examples: |
     - Die ID ist [1001](device_id)
@@ -68,3 +64,5 @@ nlu:
     - [Aktor](device_type)
     - [Sensor](device_type)
     - [Sensor](device_type) [1001](device_id)
+    - Mit einem [Aktor](device_type)
+    - die ID ist [20045](device_id)

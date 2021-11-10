@@ -1,11 +1,9 @@
 version: '2.0'
-
 config:
   store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
 - greet:
     use_entities: true
@@ -21,18 +19,31 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- stop
-- give_device_info
-- device_inform
-
-entities: []
+- stop:
+    use_entities: true
+- give_device_info:
+    use_entities: true
+- device_inform:
+    use_entities: true
+entities:
+- device_type
+- device_id
 slots:
   device_id:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   device_type:
-    type: text
-
-
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hallo! Mit wem soll ich dich verbinden?
@@ -49,18 +60,15 @@ responses:
   utter_submit_abort:
   - text: Okay! Wurde abgebrochen
   utter_slots_values_device:
-  - text: Gerättyp ist {device_type} und die ID {device_id}
-
+  - text: Hallo! Ich bin {device_type} {device_id}, wie kann ich dir helfen?
 actions: []
-
 forms:
   device_form:
     required_slots:
-      device_type:
-      - entity: device_type
-        type: from_entity
       device_id:
       - entity: device_id
         type: from_entity
-
+      device_type:
+      - entity: device_type
+        type: from_entity
 e2e_actions: []

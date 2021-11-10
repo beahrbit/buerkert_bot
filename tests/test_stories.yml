@@ -1,13 +1,32 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
- stories:
- - story: happy path 1
-   steps:
-   - user: |
-       Guten Tag!
-     intent: greet
-   - action: utter_greet
+- story: Story from Conversation ID 732d2e349a074fa487fe124e72727da8
+  steps:
+  - intent: greet
+    user: |-
+      Guten Tag
+  - action: utter_greet
+  - slot_was_set:
+    - device_type: Aktor
+  - intent: give_device_info
+    user: |-
+      Verbinde mich mit einem [Aktor](device_type)
+  - action: device_form
+  - active_loop: device_form
+  - slot_was_set:
+    - device_type: Aktor
+  - slot_was_set:
+    - device_id: '123456'
+  - intent: device_inform
+    user: |-
+      Id ist [123456](device_id)
+  - action: device_form
+  - active_loop: null
+  - slot_was_set:
+    - device_id: '123456'
+  - action: utter_submit_device
+  - action: utter_slots_values_device
 
 # - story: happy path 2
 #   steps:

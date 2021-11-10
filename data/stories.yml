@@ -15,3 +15,11 @@ stories:
 #   - action: utter_greet
 #   - intent: deny
 #   - action: utter_submit_abort
+
+- story: greeting_procedure
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_device_info
+  - action: device_form 
+  - active_loop: device_form
