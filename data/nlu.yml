@@ -19,6 +19,87 @@ nlu:
     - Ich möchte mit dem [Aktor](device_type) mit der ID [1234](device_id) verbunden werden
     - Ich möchte mit dem [Sensor](device_type) mit der ID [1235](device_id) verbunden werden
 
+- intent: help
+  examples: |
+    - Ich brauche deine Hilfe
+    - Hilf mir bitte!
+    - Kannst du mir helfen?
+    - Welche Möglichkeiten habe ich?
+    - Was kann ich machen?
+
+- intent: set_totalizer
+  examples: |
+    - Bitte setze den Totalizer auf 0
+    - Resette den Totalizer
+    - Setze den Totalizer auf null
+
+- intent: get_totalizer
+  examples: |
+    - Wie viel Liter sind durchgelaufen?
+    - Wie viel ist durchgelaufen?
+
+- intent: get_deviceInfo
+  examples: |
+    - Bitte gib mir die Deviceinfo 
+    - Gib mir die Informationen über den Device
+    - Ich brauche die Geräteinformationen
+
+- intent: get_densityFactor
+  examples: |
+    - Wie hoch ist die Dichte der Flüssigkeit?
+    - Gib mir die Dichte 
+    - Wie dicht ist die durchfließende Flüssigkeit?
+
+- intent: get_temperature
+  examples: |
+    - Wie warm ist die Flüssigkeit?
+    - Welche Temperatur hat die Flüssigkeit?
+    - Sag mir die Temperatur
+
+- intent: get_flowrate
+  examples: |
+    - Wie hoch ist die Fließrate?
+    - Wie viel Liter läuft pro Minute durch den Sensor?
+
+- intent: get_status
+  examples: |
+    - Wie geht es dem Gerät?
+    - Wie ist der Status des Gerätes?
+    - Gib mir den Status über das Gerät
+
+- intent: get_valve
+  examples: |
+    - Wie ist die Ventilposition?
+    - Auf wie viel Grad steht die Ventilposition?
+    - Wie steht das Ventil?
+    - Wie ist die Position des Ventils?
+
+- intent: set_valve
+  examples: |
+    - Setze die Position des Ventils auf 20 Grad
+    - Verändere die Ventilposition auf 50 Grad
+
+- intent: deny
+  examples: |
+    - Nein
+    - No
+    - Niemals
+    - Denke ich nicht
+    - Mag ich nicht
+    - Auf keinen Fall
+    - nicht wirklich
+
+- intent: another_device
+  examples: |
+    - Ich möchte ein anderes Gerät bearbeiten
+    - anderes Device
+    - andere ID  
+
+
+
+
+    
+
 - intent: goodbye
   examples: |
     - Tschüss
@@ -37,15 +118,7 @@ nlu:
     - hört sich gut an
     - Korrekt
 
-- intent: deny
-  examples: |
-    - Nein
-    - No
-    - Niemals
-    - Denke ich nicht
-    - Mag ich nicht
-    - Auf keinen Fall
-    - nicht wirklich
+
 
 - intent: bot_challenge
   examples: |
