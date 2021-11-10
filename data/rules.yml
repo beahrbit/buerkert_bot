@@ -12,15 +12,15 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Submit device_form
-# Condition that form is active.
-  condition:
-  - active_loop: device_form
-  steps:
-  # Check that Form is now deactivated
-  - action: device_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  # The actions we want to run when the form is submitted.
-  - action: utter_submit_device
+# - rule: Submit device_form
+# # Condition that form is active.
+#   condition:
+#   - active_loop: device_form
+#   steps:
+#   # Check that Form is now deactivated
+#   - action: device_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # The actions we want to run when the form is submitted.
+#   - action: utter_submit_device
