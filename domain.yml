@@ -30,7 +30,11 @@ slots:
   device_id:
     type: text
   device_type:
-    type: text
+    influence_conversation: true
+    type: categorical
+    values:
+    - Aktor
+    - Sensor
 
 
 responses:
