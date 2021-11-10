@@ -12,12 +12,6 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule:
-  steps:
-  - intent: give_device_info
-  - action: device_form
-  - active_loop: device_form
-
 - rule: Submit device_form
 # Condition that form is active.
   condition:
@@ -29,5 +23,4 @@ rules:
   - slot_was_set:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
-  - action: utter_submit_device 
-  - action: utter_slots_values_device
+  - action: utter_submit_device
