@@ -27,38 +27,38 @@ stories:
 
 - story: actuator_help
   steps:
-  - entities:
-    - device_type: Aktor
+  - slot_was_set:
+    - device_type: aktor
   - intent: help
   - action: utter_actuator_help
 
 - story: actuator_get_status
   steps:
-  - entities:
-    - device_type: Aktor
+  - slot_was_set:
+    - device_type: aktor
   - intent: get_status
 # - action: actuator_get_status
   - action: utter_actuator_status
 
 - story: actuator_get_valve
   steps:
-  - entities:
-    - device_type: Aktor
+  - slot_was_set:
+    - device_type: aktor
   - intent: get_valve
 # - action: actuator_get_valve
   - action: utter_actuator_getValve
 
 - story: sensor_help
   steps:
-  - entities:
-    - device_type: Sensor
+  - slot_was_set:
+    - device_type: sensor
   - intent: help
   - action: utter_sensor_help
 
 - story: sensor_get_status
   steps:
-  - entities:
-    - device_type: Sensor
+  - slot_was_set:
+    - device_type: sensor
   - intent: get_status
 # - action: sensor_get_status
   - action: utter_sensor_status
