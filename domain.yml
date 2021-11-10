@@ -24,6 +24,19 @@ intents:
 - stop
 - give_device_info
 - device_inform
+- help
+- set_totalizer
+- set_valve
+- get_totalizer
+- get_deviceInfo
+- get_densityFactor
+- get_temperature
+- get_flowrate
+- get_status
+- get_valve
+- deny
+- another_device
+
 
 entities: []
 slots:
@@ -57,9 +70,9 @@ responses:
 # Temporäre Test-Responses:
   utter_actuator_help:
   - text: "Du kannst den Aktor diese Dinge fragen: bla bla"
-  utter_sensor_help
+  utter_sensor_help:
   - text: "Du kannst den Sensor diese Dinge fragen: bla bla"
-  utter_actuator_status
+  utter_actuator_status:
   - text: Mir geht es hervorragend! (Aktor)
   utter_sensor_status:
   - text: "Mir gehts nicht so gut :C (Sensor)"
